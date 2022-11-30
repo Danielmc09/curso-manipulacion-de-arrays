@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    
+    <div id="app"></div>
+    
+    <br />
+    
+    <div id="tasks"></div>
+    
+    <script>
+    
+    const products = [
+        { title: "Hamburguesa", price: 21 },
+        { title: "Pizza", price: 10 },
+        { title: "Perro", price: 12 },
+      ];
+    
+      const app = document.getElementById("app");
+    
+      products.forEach((product) => {
+        app.innerHTML += `<li>${product.title}: ${product.price}</li>`;
+      });
+    
+    </script>
+
+    <script>
+      
+      const tasks = [
+        { title: "Hacer ejercicio", checked: true },
+        { title: "Hacer mi trabajo", checked: true },
+        { title: "Hacer trabajos de la U", checked: false },
+      ];
+      
+      const task = document.getElementById("tasks");
+      
+      const lis = tasks.map(tarea => {
+        return ` 
+          </form><label for="${tarea.title}" class="label">
+            <input id="${tarea.title}" type="checkbox" class="checkbox" >
+            ${tarea.title}
+            </label><br>
+            `;
+      });
+    
+      task.innerHTML = lis.join('')
+    
+    </script>
+  </body>
+</html>
